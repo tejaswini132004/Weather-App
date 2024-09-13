@@ -17,8 +17,6 @@ const ForecastItemContainer=document.querySelector(".forecast-item-container")
 const apiKey = "a59e8480496100d0265463af8206166c";
 searcBtn.addEventListener("click", (e) => {
   if (cityInput.value.trim() != "") {
-    //The value must not be empty and must not have only spaces thatswhy used trim
-    // console.log(cityInput.value);
     updateWeatherInfo(cityInput.value);
     cityInput.value = "";
   }
@@ -26,8 +24,6 @@ searcBtn.addEventListener("click", (e) => {
 
 cityInput.addEventListener("keydown", (e) => {
   if (e.key == "Enter" && cityInput.value.trim() != "") {
-    //Checking agr user ne enter button use kiya h istead of search button
-    // console.log(cityInput.value);
     updateWeatherInfo(cityInput.value);
     cityInput.value = "";
   }
@@ -137,6 +133,6 @@ const forecastItem=`
                 <h5 class="forecast-item-temp">${Math.round(temp)} °C</h5>
             </div>
 `
-// ForecastItemContainer.innerHTML=""
+
 ForecastItemContainer.insertAdjacentHTML("beforeend",forecastItem)
 }
